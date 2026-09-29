@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة Mahmoud Medhat الرقمية</title>
+    
+    <!-- 🔗 ربط ملف المانيفست المخصص لتثبيت التطبيق على أندرويد وويندوز (PWA) -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- 🍏 إعدادات مخصصة لأجهزة آيفون (أبل) ليظهر كـ تطبيق حقيقي ومستقل -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mahmoud Medhat">
+    <link rel="apple-touch-icon" href="profile.png">
+
+    <!-- 🎨 ملف التنسيق والألوان الاحترافي الخارجي -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 🗂️ مكتبة الأيقونات الشهيرة FontAwesome لشعار واتساب والأزرار -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- ☀️/🌙 زر تبديل الوضع الليلي والنهاري العائم في أعلى الشاشة -->
+    <button id="themeToggle" class="theme-toggle-btn" title="تبديل الوضع">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- 👤 1. الهيدر والبروفايل الشخصي باسمك وصورتك -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="profile-wrapper">
+                <!-- تأكد أن صورتك موجودة مع الملفات في VS Code واسمها profile.png -->
+                <img src="profile.png" alt="Mahmoud Medhat" class="profile-img">
+            </div>
+            <h1>Mahmoud Medhat 👋</h1>
+            <p class="bio">مطور برمجيات أقدم حلولاً رقمية ذكية ومنصات ويب متكاملة</p>
+            <div class="header-buttons">
+                <a href="#platform" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> دخول المنصة</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🎬 2. جسم المنصة الرئيسي (البحث، الفلاتر، والفيديوهات) -->
+    <main id="platform" class="container">
+        <h2 class="section-title">المحتوى التعليمي والمشاريع 🎬</h2>
+        
+        <!-- 🔍 شريط البحث الذكي وأزرار تصفية المحتوى فورياً -->
+        <div class="filter-container">
+            <input type="text" id="searchBar" placeholder="🔍 ابحث عن فيديو أو مشروع...">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-target="all">الكل</button>
+                <button class="filter-btn" data-target="video">فيديوهات فقط 🎬</button>
+                <button class="filter-btn" data-target="image">صور ومشروعات 🖼️</button>
+            </div>
+        </div>
+
+        <!-- 🕸️ شبكة عرض كروت الميديا (الفيديوهات والصور) -->
+        <div class="platform-grid">
+            
+            <!-- 📹 كارت رقم 1: فيديو (مثال لمحرر لغة الضاد الخاص بك) -->
+            <div class="media-card" data-type="video">
+                <div class="video-container">
+                    <!-- يمكنك استبدال هذا الرابط لاحقاً برابط فيديو شرحك الخاص من يوتيوب -->
+                    <iframe src="https://youtube.com" title="شرح مشروع محرر لغة الضاد" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <span class="badge badge-video">فيديو شرفي</span>
+                    <h3>محرر لغة الضاد البرمجية (IDE)</h3>
+                    <p>فيديو يستعرض كواليس بناء بيئة التطوير المتكاملة التي تدعم لغة الضاد وتعمل داخل المتصفح بنجاح.</p>
+                </div>
+            </div>
+
+            <!-- 🖼️ كارت رقم 2: صورة (مثال لمعرض أعمالك وتصميماتك) -->
+            <div class="media-card" data-type="image">
+                <div class="image-container">
+                    <img src="https://unsplash.com" alt="صورة كود برمجي" class="card-media-img">
+                </div>
+                <div class="card-content">
+                    <span class="badge badge-image">معرض الصور</span>
+                    <h3>تصميم واجهات المستخدم الحديثة</h3>
+                    <p>لقطة شاشة توضح الألوان الاحترافية المريحة للعين المعتمدة في تصميم تطبيقاتنا وتوافقها الكامل مع الهواتف الذكية.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 💬 3. زر واتساب العائم والمطور (مطابق تماماً للتطبيق الحقيقي برقمك) -->
+    <a href="https://wa.meً%20أنا%20شاهدت%20منصتك%20البرمجية%20وأود%20التواصل%20معك" 
+       class="whatsapp-floating-btn" 
+       target="_blank" 
+       title="تواصل معي مباشرة عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- 🔎 4. نافذة منبثقة سوداء مخصصة لتكبير الصور بشكل سينمائي (Lightbox) -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <!-- 🏢 التذييل الرسمي للموقع باسمك الشخصي -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | صُنع بشغف بواسطة Mahmoud Medhat</p>
+    </footer>
+
+    <!-- ⚡ ربط ملف الجافا سكريبت الخارجي لإدارة البحث والوضع الليلي وتفعيل التطبيق -->
+    <script src="script.js"></script>
+</body>
+</html>

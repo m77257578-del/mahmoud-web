@@ -1,0 +1,223 @@
+/* الألوان الاحترافية والمتغيرات البرمجية */
+:root {
+    /* ألوان الوضع الليلي الافتراضي (Dark Mode) */
+    --bg-main: #0f1013;
+    --bg-hero: linear-gradient(180deg, #161920 0%, #0f1013 100%);
+    --bg-card: #17191e;
+    --bg-input: #1f2229;
+    --border-color: #262932;
+    --text-main: #ffffff;
+    --text-muted: #9ba1b0;
+    --primary-color: #00ff88; /* أخضر نيون فخم للمبرمجين */
+    --primary-hover: #00e077;
+    --btn-text: #000000;
+}
+
+/* ألوان الوضع النهاري (Light Mode) عندما يتم تفعيل الكلاس */
+body.light-theme {
+    --bg-main: #f4f6f9;
+    --bg-hero: linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%);
+    --bg-card: #ffffff;
+    --bg-input: #eaedf2;
+    --border-color: #e1e5ed;
+    --text-main: #1a1d24;
+    --text-muted: #626875;
+    --primary-color: #0066ff; /* أزرق براند احترافي للوضع المضيء */
+    --primary-hover: #0052cc;
+    --btn-text: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* زر تبديل الأوضاع الاحترافي */
+.theme-toggle-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--primary-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover { transform: scale(1.1); }
+
+/* 1. الهيدر والبروفايل الشخصي */
+.hero-section {
+    background: var(--bg-hero);
+    text-align: center;
+    padding: 90px 0 50px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+body.light-theme .profile-img {
+    box-shadow: 0 0 25px rgba(0, 102, 255, 0.15);
+}
+.profile-img:hover { transform: scale(1.08) rotate(3deg); }
+
+.hero-section h1 { font-size: 2.5rem; font-weight: 700; margin: 20px 0 8px 0; letter-spacing: -0.5px; }
+.bio { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.5; }
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 14px rgba(0, 255, 136, 0.2);
+    transition: all 0.3s ease;
+}
+body.light-theme .btn-primary { box-shadow: 0 4px 14px rgba(0, 102, 255, 0.2); }
+.btn-primary:hover { transform: translateY(-2px); opacity: 0.95; }
+
+/* 2. شبكة المنصة والمحتوى */
+.section-title { font-size: 1.7rem; font-weight: 700; margin-bottom: 35px; border-right: 4px solid var(--primary-color); padding-right: 12px; }
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+    background-color: var(--bg-card);
+    padding: 16px 24px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+}
+
+#searchBar {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 20px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 360px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+#searchBar:focus { border-color: var(--primary-color); }
+
+.filter-buttons { display: flex; gap: 10px; }
+.filter-btn {
+    background-color: var(--bg-input);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+.filter-btn.active { background-color: var(--primary-color); color: var(--btn-text); border-color: var(--primary-color); }
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.media-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.media-card:hover { transform: translateY(-6px); border-color: var(--primary-color); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+
+.video-container { position: relative; padding-bottom: 56.25%; height: 0; background-color: #000; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.card-media-img { width: 100%; height: 210px; object-fit: cover; transition: transform 0.5s ease; }
+.media-card:hover .card-media-img { transform: scale(1.03); }
+
+.card-content { padding: 24px; }
+.card-content h3 { margin: 12px 0 8px 0; font-size: 1.3rem; font-weight: 600; }
+.card-content p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+.badge { display: inline-block; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.badge-video { background-color: rgba(255, 0, 85, 0.1); color: #ff0055; }
+.badge-image { background-color: rgba(0, 102, 255, 0.1); color: #0066ff; }
+
+/* 3. زر واتساب العائم المطور والمطابق للتطبيق */
+.whatsapp-floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+.whatsapp-floating-btn::before {
+    content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%;
+    background-color: #25D366; opacity: 0.6; z-index: -1; animation: whatsapp-pulse 2s infinite;
+}
+.whatsapp-floating-btn:hover { transform: scale(1.08); background-color: #1ebd58; }
+
+@keyframes whatsapp-pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* 4. نافذة تكبير الصور (Lightbox) */
+.lightbox {
+    display: none; position: fixed; z-index: 100000; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.92); justify-content: center; align-items: center;
+}
+.lightbox-content { max-width: 85%; max-height: 80%; border-radius: 12px; animation: zoomIn 0.3s ease; }
+.close-lightbox { position: absolute; top: 25px; right: 35px; color: #fff; font-size: 42px; cursor: pointer; transition: 0.3s; }
+.close-lightbox:hover { color: var(--primary-color); }
+
+@keyframes zoomIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+footer { text-align: center; padding: 40px; color: #555; background-color: #090a0c; border-top: 1px solid var(--border-color); font-size: 0.9rem; }
+body.light-theme footer { background-color: #eaedf2; color: #777; }

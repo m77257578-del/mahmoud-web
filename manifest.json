@@ -1,0 +1,22 @@
+{
+  "name": "Mahmoud Medhat Platform",
+  "short_name": "Mahmoud Medhat",
+  "description": "المنصة الرقمية التعليمية للمطور محمود مدحت",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background-color": "#0f1013",
+  "theme_color": "#00ff88",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "profile.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "profile.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
